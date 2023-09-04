@@ -16,7 +16,7 @@
 12. django-admin startapp applicationName(Book)
 13. python manage.py runserver
 =====================================================
-=====================================================
+===================================================== <br>
 #### apne ko do kaam karne hote hai 
 	1.
 		1. project ke ander setting file me jao
