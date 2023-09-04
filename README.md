@@ -7,8 +7,8 @@
 4. pip install django
 5. django-admin
 6. django-admin startproject projectName(BookStore)
-7. code .
-8. cd BookStore
+7. cd BookStore 
+8. code .
 9. python manage.py runserver
 10. how to runserver break
 	ctrl + c (runserver break)
