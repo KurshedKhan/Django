@@ -24,5 +24,8 @@ urlpatterns = [
     path('blog/<blogid>',views.blog1),
     path('', views.home),
     path('about/', views.about),
+    path('service/', views.service),
+    path('contact-us/', views.contact),
+    path('UserForm/', views.Userform),
       
 ]
