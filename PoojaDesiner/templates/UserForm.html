@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-<form method="POST">
+<form method="POST" action="/SubmitForm/">
     {% csrf_token %}
   <div>
     <label for="box1">Value 1</label>

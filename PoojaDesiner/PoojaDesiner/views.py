@@ -40,14 +40,40 @@ def Userform(request):
     
    return render(request,"UserForm.html",data)
 
+
+def sumitform(request):
+    data = {}
+    try:
+       if request.method == "POST" :
+           n1 = int(request.POST['num1'])
+           n2 = int(request.POST['num2'])
+           total = n1 + n2;
+           print("\n================================\n")
+           print("My n1 Value : ",n1)
+           print("My n2 Value : ",n2)
+           print("My Total Value : ",total)
+           print("\n================================\n")
+
+           data = {
+                "value1" : n1,
+                "value2" : n2,
+                "output" : total
+           }
+           return render(request,"SubmitForm.html",data)
+    except:
+        pass
+    
+    return render(request,"UserForm.html",data)
+
+
 def home(request):
    data = {}
    try:
-       if request.method == "POST" :
-            name = request.POST.get('name')
-            phoneNumber = request.POST['phoneNumber']
-            email = request.POST['email']
-            messagebox = request.POST['messagebox']
+       if request.method == "GET" :
+            name = request.GET.get('name')
+            phoneNumber = request.GET['phoneNumber']
+            email = request.GET['email']
+            messagebox = request.GET['messagebox']
             data = {
                 "name" : name,
                 "phoneNumber" : phoneNumber,

@@ -86,7 +86,7 @@
                   <a class="{% if request.path %} nav-link {% endif %}" href="/service/">Services</a>
                 </li>
                 <li class="nav-item">
-                  <a class="{% if request.path %} nav-link {% endif %}" href="/about/"> About</a>
+                  <a class="{% if request.path %} nav-link {% endif %}" href="{% url 'about-us' %}"> About</a>
                 </li>
                 <li class="nav-item">
                   <a class="{% if request.path %} nav-link {% endif %}" href="/contact-us/">Contact Us</a>
