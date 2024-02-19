@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
 
+from .forms import Djangoform
+
 def blog(request):
     return HttpResponse("This is my blog page")
 
@@ -64,6 +66,30 @@ def sumitform(request):
         pass
     
     return render(request,"UserForm.html",data)
+
+def djangoform(request):
+    fn = Djangoform()
+    data = {'form' : fn}
+    try:
+       if request.method == "POST" :
+           n1 = int(request.POST['num1'])
+           n2 = int(request.POST['num2'])
+           total = n1 + n2;
+           data = {
+                "value1" : n1,
+                "value2" : n2,
+                "output" : total,
+                'form' : fn
+           }
+           return render(request,"SubmitForm.html",data)
+    except:
+        pass
+    
+    return render(request,"DjangoForm.html",data)
+
+
+
+
 
 
 def home(request):

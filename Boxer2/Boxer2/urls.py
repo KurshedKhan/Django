@@ -1,5 +1,5 @@
 """
-URL configuration for PoojaDesiner project.
+URL configuration for Boxer2 project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -16,18 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from PoojaDesiner import views
+from Boxer2 import views
 
 urlpatterns = [
-    path('admin-panel/', admin.site.urls),
-    path('blog/', views.blog),
-    path('blog/<blogid>',views.blog1),
-    path('', views.home),
-    path('about/', views.about,name="about-us"),
-    path('service/', views.service),
-    path('contact-us/', views.contact),
-    path('UserForm/', views.Userform),
-    path('SubmitForm/', views.sumitform),
-    path('DjangoForm/',views.djangoform),
-      
+    path('admin/', admin.site.urls),
+    path('',views.home),
+    path('about/',views.about,name='About'),
+    path('clas',views.clas,name='Classes'),
+    path('blog',views.blog,name='Blog'),
 ]
