@@ -19,24 +19,27 @@ def contact(request):
     return render(request,'contact.html')
 
 def Userform(request):
+   
    data = {}
    try:
        if request.method == "POST" :
-           n1 = int(request.POST['num1'])
-           n2 = int(request.POST['num2'])
-           total = n1 + n2;
-           print("\n================================\n")
-           print("My n1 Value : ",n1)
-           print("My n2 Value : ",n2)
-           print("My Total Value : ",total)
-           print("\n================================\n")
-
+           n1 = eval(request.POST['num1'])
+           n2 = eval(request.POST['num2'])
+           opr = request.POST['opr']
+           if opr == "+":
+               total = n1 + n2
+           elif opr == "-":
+               total = n1-n2
+           elif opr == "*":
+               total = n1*n2
+           elif opr == "/":
+               total = n1/n2
            data = {
                 "value1" : n1,
                 "value2" : n2,
                 "output" : total
            }
-           return redirect('/about/')
+        
    except:
        pass
     

@@ -1,19 +1,45 @@
 {% extends 'base.html' %} {% block content %}
 
-<form method="POST" action="/SubmitForm/">
-    {% csrf_token %}
-  <div>
-    <label for="box1">Value 1</label>
-    <input type="text" id="box1" placeholder="Enter number 1" value="{{value1}}" name="num1" />
-  </div>
-  <div>
-    <label for="box2">Value 2</label>
-    <input type="text" id="box2"  placeholder="Enter number 2" value="{{value2}}"  name="num2" />
-  </div>
-  <button type="Submit">Submit</button>
-  <div>
-    <label for="">Total</label>
-    <input type="text" value="{{output}}" />
+<form method="POST" action="">
+  {% csrf_token %}
+  <div class="container border border-4 border-dark my-4 bg-dark py-4 rounded rounded-3">
+    <h1 class="text-white text-center">Calculator</h1>
+    <div class="my-3">
+      <label for="box1" class="text-white">Value 1</label>
+      <input
+        type="text"
+        id="box1"
+        placeholder="Enter number 1"
+        value="{{value1}}"
+        name="num1"
+        class="form-control border border-4 border-dark"
+      />
+    </div>
+    <div class="my-3">
+      <label for="box2" class="text-white">Operator</label>
+      <select name="opr" class="form-control">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+    </div>
+    <div class="my-3">
+      <label for="box2" class="text-white">Value 2</label>
+      <input
+        type="text"
+        id="box2"
+        placeholder="Enter number 2"
+        value="{{value2}}"
+        name="num2"
+        class="form-control border border-4 border-dark"
+      />
+    </div>
+    <button type="Submit" class="form-control border border-4 border-dark my-3 bg-success text-white">Submit</button>
+    <div>
+      <label  class="text-white">Total</label>
+      <input type="text" value="{{output}}"  class="form-control border border-4 border-dark my-1 " />
+    </div>
   </div>
 </form>
 {% endblock %}
