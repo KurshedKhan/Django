@@ -115,3 +115,16 @@ def home(request):
        pass
     
    return render(request,"index.html",data)
+
+def oddeven(request):
+    try:
+        result = '';
+        if request.method == "POST":
+            n1 = int(request.POST.get('num1'))
+            if n1 % 2 == 0:
+                result = "Even Number"
+            else:
+                result = "Odd Number"
+        return render(request,'OddEven.html',{"Output" : result})
+    except:
+        pass

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <div>
+        <label>Value 1</label>
+    <input type="text"  placeholder="Enter a Number" name="num1"/>
+    </div>
+    <button type="submit">Click</button>
+    <div>
+        <label>Result</label>
+        <input type="text" placeholder="Result" Value="{{Output}}" >
+    </div>
+
+</form>
+
+
+{% endblock  %}
