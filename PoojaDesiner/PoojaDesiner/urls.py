@@ -29,6 +29,7 @@ urlpatterns = [
     path('UserForm/', views.Userform),
     path('SubmitForm/', views.sumitform),
     path('DjangoForm/',views.djangoform),
-     path('OddEven/',views.oddeven)
+    path('OddEven/',views.oddeven),
+     path('Marksheet/',views.marksheet)
       
 ]

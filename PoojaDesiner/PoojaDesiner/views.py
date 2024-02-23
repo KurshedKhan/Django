@@ -128,3 +128,37 @@ def oddeven(request):
         return render(request,'OddEven.html',{"Output" : result})
     except:
         pass
+
+    
+def marksheet(request):
+    Std_data = {}
+    Total = 0
+    P = 0
+    Div = ""
+    try:
+        if request.method == "POST":
+            Hindi = eval(request.POST['Hindi'])
+            English = eval(request.POST['English'])
+            Maths = eval( request.POST['Maths'])
+            Science = eval(request.POST['Science'])
+            SST = eval(request.POST['SST'])
+            Total = Hindi + English + Maths + Science + SST
+            P = (Total * 100)/ 500
+
+            if P>90:
+                Div = "First Division"
+            elif P> 70:
+                Div = "Second Division"  
+            elif P>45:
+                Div = "Third Division"  
+            Std_data = {
+                "Output" : Total,
+                "PRC" : P,
+                "Division" : Div,
+            }
+    except:
+        pass
+        
+
+
+    return render(request,'Marksheet.html',Std_data)
