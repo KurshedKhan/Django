@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
+from DesinerApp.models import serviceBox 
 
 from .forms import Djangoform
 
@@ -91,30 +92,12 @@ def djangoform(request):
     return render(request,"DjangoForm.html",data)
 
 
-
-
-
-
 def home(request):
-   data = {}
-   try:
-       if request.method == "GET" :
-            name = request.GET.get('name')
-            phoneNumber = request.GET['phoneNumber']
-            email = request.GET['email']
-            messagebox = request.GET['messagebox']
-            data = {
-                "name" : name,
-                "phoneNumber" : phoneNumber,
-                'email' : email,
-                'messagebox' : messagebox
-                
-            }
-            return redirect("/about/")
-   except:
-       pass
-    
-   return render(request,"index.html",data)
+    ServiceData = serviceBox.objects.all().order_by("service_heading")
+    data = {
+        'ServiceData' : ServiceData
+    }
+    return render(request,"index.html",data)
 
 def oddeven(request):
     try:

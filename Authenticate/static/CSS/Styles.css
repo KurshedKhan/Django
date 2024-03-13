@@ -1,0 +1,20 @@
+img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+ul{
+    list-style: none;
+}
+span{
+    color: red;
+}
+
+.error{
+    color: red;
+}

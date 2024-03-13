@@ -7,3 +7,4 @@ class ServiceAdmin(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(serviceBox,ServiceAdmin)
+ 
